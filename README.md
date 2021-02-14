@@ -1,1 +1,0 @@
-CS684-LustreHeptagonAssignment

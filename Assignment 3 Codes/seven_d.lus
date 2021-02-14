@@ -1,0 +1,7 @@
+node monitor(req, ack:bool) returns (ok: bool)
+var count: int;
+let
+     count = 0 -> if pre(req) then (pre(count) + 1) else 0;
+     ok = (not (if count >= 2 and req then 1 else 0)) or ack;
+tel
+

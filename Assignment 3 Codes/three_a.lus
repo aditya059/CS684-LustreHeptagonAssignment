@@ -1,0 +1,7 @@
+node sequence(dummy: bool) returns (term: int)
+var m : int;
+let
+  m = 1 -> (pre(m) * 3);
+  term = 1 -> (pre(term) + m);
+tel
+

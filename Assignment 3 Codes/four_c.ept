@@ -1,0 +1,23 @@
+node f(ack: bool; initial: int) returns (count: int)
+let 
+    count =  if ack then initial + 1 else initial;
+tel
+
+node mutex<<n: int>>(ack: bool^n) returns (ok: bool)
+var count: int;
+let 
+   count = fold<<n>>f(ack, 0);
+   ok = if count < 2 then true else false;
+tel
+
+-- Code 1 used for Testing
+node display() returns(ok: bool)
+let
+   ok = mutex<< 5 >>([false,false,false,false,true]);
+tel
+
+-- Code 2 used for Testing
+--node display() returns(ok: bool)
+--let
+--   ok = mutex<< 5 >>([false,false,true,false,true]);
+--tel

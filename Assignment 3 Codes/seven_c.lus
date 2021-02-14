@@ -1,0 +1,5 @@
+node monitor(a, b: bool) returns (c: bool)
+let
+    c = (a and (not b)) -> ((pre(c) or a) and (not b));	
+tel
+

@@ -1,0 +1,8 @@
+node monitor(p, q: bool) returns (ok: bool)
+var s, t: bool;
+let
+    s = q -> (pre(s) or q);	
+    t = p -> (pre(t) and p); 
+    ok = s and t;
+tel
+
